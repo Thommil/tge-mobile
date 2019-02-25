@@ -66,7 +66,6 @@ func goAndroidBuild(pkg *build.Package, androidArchs []string) (map[string]bool,
 	for _, arch := range androidArchs {
 		env := androidEnv[arch]
 		toolchain := ndk.Toolchain(arch)
-		fmt.Printf("%v\n", toolchain)
 		libPath := "lib/" + toolchain.abi + "/lib" + libName + ".so"
 		libAbsPath := filepath.Join(tmpdir, libPath)
 		if err := mkdir(filepath.Dir(libAbsPath)); err != nil {

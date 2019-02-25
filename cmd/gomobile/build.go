@@ -150,7 +150,7 @@ func runBuild(cmd *command) (err error) {
 	return nil
 }
 
-var nmRE = regexp.MustCompile(`[0-9a-f]{8} t (?:.*/vendor/)?(golang.org/x.*/[^.]*)`)
+var nmRE = regexp.MustCompile(`[0-9a-f]{8} t (?:.*/vendor/)?(github.com/thommil.*/[^.]*)`)
 
 func extractPkgs(nm string, path string) (map[string]bool, error) {
 	if buildN {
