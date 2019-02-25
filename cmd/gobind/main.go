@@ -20,9 +20,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"golang.org/x/mobile/internal/importers"
-	"golang.org/x/mobile/internal/importers/java"
-	"golang.org/x/mobile/internal/importers/objc"
+	"github.com/thommil/tge-mobile/internal/importers"
+	"github.com/thommil/tge-mobile/internal/importers/java"
+	"github.com/thommil/tge-mobile/internal/importers/objc"
 )
 
 var (

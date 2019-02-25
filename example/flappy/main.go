@@ -12,17 +12,17 @@ import (
 	"math/rand"
 	"time"
 
-	"golang.org/x/mobile/app"
-	"golang.org/x/mobile/event/key"
-	"golang.org/x/mobile/event/lifecycle"
-	"golang.org/x/mobile/event/paint"
-	"golang.org/x/mobile/event/size"
-	"golang.org/x/mobile/event/touch"
-	"golang.org/x/mobile/exp/gl/glutil"
-	"golang.org/x/mobile/exp/sprite"
-	"golang.org/x/mobile/exp/sprite/clock"
-	"golang.org/x/mobile/exp/sprite/glsprite"
-	"golang.org/x/mobile/gl"
+	"github.com/thommil/tge-mobile/app"
+	"github.com/thommil/tge-mobile/event/key"
+	"github.com/thommil/tge-mobile/event/lifecycle"
+	"github.com/thommil/tge-mobile/event/paint"
+	"github.com/thommil/tge-mobile/event/size"
+	"github.com/thommil/tge-mobile/event/touch"
+	"github.com/thommil/tge-mobile/exp/gl/glutil"
+	"github.com/thommil/tge-mobile/exp/sprite"
+	"github.com/thommil/tge-mobile/exp/sprite/clock"
+	"github.com/thommil/tge-mobile/exp/sprite/glsprite"
+	"github.com/thommil/tge-mobile/gl"
 )
 
 func main() {

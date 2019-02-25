@@ -21,7 +21,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"golang.org/x/mobile/internal/binres"
+	"github.com/thommil/tge-mobile/internal/binres"
 )
 
 func goAndroidBuild(pkg *build.Package, androidArchs []string) (map[string]bool, error) {
@@ -66,6 +66,7 @@ func goAndroidBuild(pkg *build.Package, androidArchs []string) (map[string]bool,
 	for _, arch := range androidArchs {
 		env := androidEnv[arch]
 		toolchain := ndk.Toolchain(arch)
+		fmt.Printf("%v\n", toolchain)
 		libPath := "lib/" + toolchain.abi + "/lib" + libName + ".so"
 		libAbsPath := filepath.Join(tmpdir, libPath)
 		if err := mkdir(filepath.Dir(libAbsPath)); err != nil {
@@ -167,11 +168,11 @@ func goAndroidBuild(pkg *build.Package, androidArchs []string) (map[string]bool,
 
 	for _, arch := range androidArchs {
 		toolchain := ndk.Toolchain(arch)
-		if nmpkgs[arch]["golang.org/x/mobile/exp/audio/al"] {
+		if nmpkgs[arch]["github.com/thommil/tge-mobile/exp/audio/al"] {
 			dst := "lib/" + toolchain.abi + "/libopenal.so"
 			src := filepath.Join(gomobilepath, dst)
 			if _, err := os.Stat(src); err != nil {
-				return nil, errors.New("the Android requires the golang.org/x/mobile/exp/audio/al, but the OpenAL libraries was not found. Please run gomobile init with the -openal flag pointing to an OpenAL source directory.")
+				return nil, errors.New("the Android requires the github.com/thommil/tge-mobile/exp/audio/al, but the OpenAL libraries was not found. Please run gomobile init with the -openal flag pointing to an OpenAL source directory.")
 			}
 			if err := apkwWriteFile(dst, src); err != nil {
 				return nil, err
