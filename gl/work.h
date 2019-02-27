@@ -7,7 +7,7 @@
 // condition on __ANDROID_API__ to get GLES3 headers. However
 // we also need to add -lGLESv3 to LDFLAGS, which we cannot do
 // from inside an ifdef.
-#include <GLES2/gl2.h>
+#include <GLES3/gl3.h>
 #elif os_linux
 #include <GLES3/gl3.h> // install on Ubuntu with: sudo apt-get install libegl1-mesa-dev libgles2-mesa-dev libx11-dev
 #elif os_openbsd

@@ -11,8 +11,8 @@ package gl
 #cgo darwin,amd64,!ios  LDFLAGS: -framework OpenGL
 #cgo darwin,arm         LDFLAGS: -framework OpenGLES
 #cgo darwin,arm64       LDFLAGS: -framework OpenGLES
-#cgo linux              LDFLAGS: -lGLESv2
-#cgo openbsd            LDFLAGS: -L/usr/X11R6/lib/ -lGLESv2
+#cgo linux              LDFLAGS: -lGLESv3
+#cgo openbsd            LDFLAGS: -L/usr/X11R6/lib/ -lGLESv3
 
 #cgo android            CFLAGS: -Dos_android
 #cgo ios                CFLAGS: -Dos_ios
@@ -86,9 +86,9 @@ func NewContext() (Context, Worker) {
 		work:          make(chan call, workbufLen),
 		retvalue:      make(chan C.uintptr_t),
 	}
-	if C.GLES_VERSION == "GL_ES_2_0" {
-		return glctx, glctx
-	}
+	// if C.GLES_VERSION == "GL_ES_2_0" {
+	// 	return glctx, glctx
+	// }
 	return context3{glctx}, glctx
 }
 

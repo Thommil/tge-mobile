@@ -266,14 +266,14 @@ type ndkToolchain struct {
 }
 
 func (tc *ndkToolchain) Path(ndkRoot, toolName string) string {
-	var pref string
+	//var pref string
 	switch toolName {
 	case "clang", "clang++":
-		pref = tc.clangPrefix
+		return filepath.Join(ndkRoot, "toolchains", "llvm", "prebuilt", archNDK(), "bin", tc.clangPrefix+"-"+toolName)
 	default:
-		pref = tc.toolPrefix
+		return filepath.Join(ndkRoot, "toolchains", "llvm", "prebuilt", archNDK(), tc.toolPrefix, "bin", toolName)
 	}
-	return filepath.Join(ndkRoot, "toolchains", "llvm", "prebuilt", archNDK(), "bin", pref+"-"+toolName)
+	//return filepath.Join(ndkRoot, "toolchains", "llvm", "prebuilt", archNDK(), "bin", pref+"-"+toolName)
 }
 
 type ndkConfig map[string]ndkToolchain // map: GOOS->androidConfig.
@@ -291,7 +291,7 @@ var ndk = ndkConfig{
 		arch:        "arm",
 		abi:         "armeabi-v7a",
 		toolPrefix:  "arm-linux-androideabi",
-		clangPrefix: "armv7a-linux-androideabi16",
+		clangPrefix: "armv7a-linux-androideabi21",
 	},
 	"arm64": {
 		arch:        "arm64",
@@ -304,7 +304,7 @@ var ndk = ndkConfig{
 		arch:        "x86",
 		abi:         "x86",
 		toolPrefix:  "i686-linux-android",
-		clangPrefix: "i686-linux-android16",
+		clangPrefix: "i686-linux-android21",
 	},
 	"amd64": {
 		arch:        "x86_64",

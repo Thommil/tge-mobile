@@ -22,7 +22,7 @@ the app package initialization.
 package app
 
 /*
-#cgo LDFLAGS: -landroid -llog -lEGL -lGLESv2
+#cgo LDFLAGS: -landroid -llog -lEGL -lGLESv3
 
 #include <android/configuration.h>
 #include <android/input.h>
