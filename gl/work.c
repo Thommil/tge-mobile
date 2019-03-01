@@ -422,6 +422,12 @@ uintptr_t processFn(struct fnargs* args, char* parg) {
 	case glfnUniform1fv:
 		glUniform1fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
+	case glfnUniform1fvP:
+		glUniform1fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform1fvUP:
+		glUniform1fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
 	case glfnUniform1i:
 		glUniform1i((GLint)args->a0, (GLint)args->a1);
 		break;
@@ -434,10 +440,22 @@ uintptr_t processFn(struct fnargs* args, char* parg) {
 	case glfnUniform1iv:
 		glUniform1iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
+	case glfnUniform1ivP:
+		glUniform1iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform1ivUP:
+		glUniform1iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
 	case glfnUniform2f:
 		glUniform2f((GLint)args->a0, *(GLfloat*)&args->a1, *(GLfloat*)&args->a2);
 		break;
 	case glfnUniform2fv:
+		glUniform2fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform2fvP:
+		glUniform2fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform2fvUP:
 		glUniform2fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
 	case glfnUniform2i:
@@ -452,10 +470,22 @@ uintptr_t processFn(struct fnargs* args, char* parg) {
 	case glfnUniform2iv:
 		glUniform2iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
+	case glfnUniform2ivP:
+		glUniform2iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform2ivUP:
+		glUniform2iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
 	case glfnUniform3f:
 		glUniform3f((GLint)args->a0, *(GLfloat*)&args->a1, *(GLfloat*)&args->a2, *(GLfloat*)&args->a3);
 		break;
 	case glfnUniform3fv:
+		glUniform3fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform3fvP:
+		glUniform3fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform3fvUP:
 		glUniform3fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
 	case glfnUniform3i:
@@ -470,10 +500,22 @@ uintptr_t processFn(struct fnargs* args, char* parg) {
 	case glfnUniform3iv:
 		glUniform3iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
+	case glfnUniform3ivP:
+		glUniform3iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform3ivUP:
+		glUniform3iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
 	case glfnUniform4f:
 		glUniform4f((GLint)args->a0, *(GLfloat*)&args->a1, *(GLfloat*)&args->a2, *(GLfloat*)&args->a3, *(GLfloat*)&args->a4);
 		break;
 	case glfnUniform4fv:
+		glUniform4fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform4fvP:
+		glUniform4fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform4fvUP:
 		glUniform4fv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
 	case glfnUniform4i:
@@ -488,13 +530,37 @@ uintptr_t processFn(struct fnargs* args, char* parg) {
 	case glfnUniform4iv:
 		glUniform4iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
 		break;
+	case glfnUniform4ivP:
+		glUniform4iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
+	case glfnUniform4ivUP:
+		glUniform4iv((GLint)args->a0, (GLsizeiptr)args->a1, (GLvoid*)parg);
+		break;
 	case glfnUniformMatrix2fv:
+		glUniformMatrix2fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
+		break;
+	case glfnUniformMatrix2fvP:
+		glUniformMatrix2fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
+		break;
+	case glfnUniformMatrix2fvUP:
 		glUniformMatrix2fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
 		break;
 	case glfnUniformMatrix3fv:
 		glUniformMatrix3fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
 		break;
+	case glfnUniformMatrix3fvP:
+		glUniformMatrix3fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
+		break;
+	case glfnUniformMatrix3fvUP:
+		glUniformMatrix3fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
+		break;
 	case glfnUniformMatrix4fv:
+		glUniformMatrix4fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
+		break;
+	case glfnUniformMatrix4fvP:
+		glUniformMatrix4fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
+		break;
+	case glfnUniformMatrix4fvUP:
 		glUniformMatrix4fv((GLint)args->a0, (GLsizeiptr)args->a1, 0, (GLvoid*)parg);
 		break;
 	case glfnUniformMatrix2x3fv:

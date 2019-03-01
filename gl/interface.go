@@ -4,6 +4,10 @@
 
 package gl
 
+import (
+	"unsafe"
+)
+
 // Context is an OpenGL ES context.
 //
 // A Context has a method for every GL function supported by ES 2 or later.
@@ -664,6 +668,10 @@ type Context interface {
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform1fv(dst Uniform, src []float32)
 
+	Uniform1fvP(dst Uniform, count int32, value *float32)
+
+	Uniform1fvUP(dst Uniform, count int32, value unsafe.Pointer)
+
 	// Uniform1i writes an int uniform variable.
 	//
 	// Uniform1i and Uniform1iv are the only two functions that may be used
@@ -682,6 +690,10 @@ type Context interface {
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform1iv(dst Uniform, src []int32)
 
+	Uniform1ivP(dst Uniform, count int32, value *int32)
+
+	Uniform1ivUP(dst Uniform, count int32, value unsafe.Pointer)
+
 	// Uniform2f writes a vec2 uniform variable.
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
@@ -691,6 +703,10 @@ type Context interface {
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform2fv(dst Uniform, src []float32)
+
+	Uniform2fvP(dst Uniform, count int32, value *float32)
+
+	Uniform2fvUP(dst Uniform, count int32, value unsafe.Pointer)
 
 	// Uniform2i writes an ivec2 uniform variable.
 	//
@@ -702,6 +718,10 @@ type Context interface {
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform2iv(dst Uniform, src []int32)
 
+	Uniform2ivP(dst Uniform, count int32, value *int32)
+
+	Uniform2ivUP(dst Uniform, count int32, value unsafe.Pointer)
+
 	// Uniform3f writes a vec3 uniform variable.
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
@@ -711,6 +731,10 @@ type Context interface {
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform3fv(dst Uniform, src []float32)
+
+	Uniform3fvP(dst Uniform, count int32, value *float32)
+
+	Uniform3fvUP(dst Uniform, count int32, value unsafe.Pointer)
 
 	// Uniform3i writes an ivec3 uniform variable.
 	//
@@ -722,6 +746,10 @@ type Context interface {
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform3iv(dst Uniform, src []int32)
 
+	Uniform3ivP(dst Uniform, count int32, value *int32)
+
+	Uniform3ivUP(dst Uniform, count int32, value unsafe.Pointer)
+
 	// Uniform4f writes a vec4 uniform variable.
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
@@ -731,6 +759,10 @@ type Context interface {
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform4fv(dst Uniform, src []float32)
+
+	Uniform4fvP(dst Uniform, count int32, value *float32)
+
+	Uniform4fvUP(dst Uniform, count int32, value unsafe.Pointer)
 
 	// Uniform4i writes an ivec4 uniform variable.
 	//
@@ -742,6 +774,10 @@ type Context interface {
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	Uniform4iv(dst Uniform, src []int32)
 
+	Uniform4ivP(dst Uniform, count int32, value *int32)
+
+	Uniform4ivUP(dst Uniform, count int32, value unsafe.Pointer)
+
 	// UniformMatrix2fv writes 2x2 matrices. Each matrix uses four
 	// float32 values, so the number of matrices written is len(src)/4.
 	//
@@ -749,6 +785,10 @@ type Context interface {
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	UniformMatrix2fv(dst Uniform, src []float32)
+
+	UniformMatrix2fvP(dst Uniform, count int32, value *float32)
+
+	UniformMatrix2fvUP(dst Uniform, count int32, value unsafe.Pointer)
 
 	// UniformMatrix3fv writes 3x3 matrices. Each matrix uses nine
 	// float32 values, so the number of matrices written is len(src)/9.
@@ -758,6 +798,10 @@ type Context interface {
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	UniformMatrix3fv(dst Uniform, src []float32)
 
+	UniformMatrix3fvP(dst Uniform, count int32, value *float32)
+
+	UniformMatrix3fvUP(dst Uniform, count int32, value unsafe.Pointer)
+
 	// UniformMatrix4fv writes 4x4 matrices. Each matrix uses 16
 	// float32 values, so the number of matrices written is len(src)/16.
 	//
@@ -765,6 +809,10 @@ type Context interface {
 	//
 	// http://www.khronos.org/opengles/sdk/docs/man3/html/glUniform.xhtml
 	UniformMatrix4fv(dst Uniform, src []float32)
+
+	UniformMatrix4fvP(dst Uniform, count int32, value *float32)
+
+	UniformMatrix4fvUP(dst Uniform, count int32, value unsafe.Pointer)
 
 	// UseProgram sets the active program.
 	//

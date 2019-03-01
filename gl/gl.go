@@ -1392,6 +1392,54 @@ func (ctx *context) Uniform1iv(dst Uniform, src []int32) {
 	})
 }
 
+func (ctx *context) Uniform1ivP(dst Uniform, count int32, value *int32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform1ivP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform1ivUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform1ivUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform1fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform1fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform1fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform1fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
 func (ctx *context) Uniform2f(dst Uniform, v0, v1 float32) {
 	ctx.enqueue(call{
 		args: fnargs{
@@ -1415,6 +1463,30 @@ func (ctx *context) Uniform2fv(dst Uniform, src []float32) {
 	})
 }
 
+func (ctx *context) Uniform2fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform2fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform2fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform2fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
 func (ctx *context) Uniform2i(dst Uniform, v0, v1 int) {
 	ctx.enqueue(call{
 		args: fnargs{
@@ -1434,6 +1506,30 @@ func (ctx *context) Uniform2iv(dst Uniform, src []int32) {
 			a1: uintptr(len(src) / 2),
 		},
 		parg:     unsafe.Pointer(&src[0]),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform2ivP(dst Uniform, count int32, value *int32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform2ivP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform2ivUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform2ivUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
 		blocking: true,
 	})
 }
@@ -1462,6 +1558,30 @@ func (ctx *context) Uniform3fv(dst Uniform, src []float32) {
 	})
 }
 
+func (ctx *context) Uniform3fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform3fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform3fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform3fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
 func (ctx *context) Uniform3i(dst Uniform, v0, v1, v2 int32) {
 	ctx.enqueue(call{
 		args: fnargs{
@@ -1482,6 +1602,30 @@ func (ctx *context) Uniform3iv(dst Uniform, src []int32) {
 			a1: uintptr(len(src) / 3),
 		},
 		parg:     unsafe.Pointer(&src[0]),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform3ivP(dst Uniform, count int32, value *int32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform3ivP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform3ivUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform3ivUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
 		blocking: true,
 	})
 }
@@ -1511,6 +1655,30 @@ func (ctx *context) Uniform4fv(dst Uniform, src []float32) {
 	})
 }
 
+func (ctx *context) Uniform4fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform4fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform4fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform4fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
 func (ctx *context) Uniform4i(dst Uniform, v0, v1, v2, v3 int32) {
 	ctx.enqueue(call{
 		args: fnargs{
@@ -1536,6 +1704,30 @@ func (ctx *context) Uniform4iv(dst Uniform, src []int32) {
 	})
 }
 
+func (ctx *context) Uniform4ivP(dst Uniform, count int32, value *int32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform4ivP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) Uniform4ivUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniform4ivUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
 func (ctx *context) UniformMatrix2fv(dst Uniform, src []float32) {
 	ctx.enqueue(call{
 		args: fnargs{
@@ -1545,6 +1737,30 @@ func (ctx *context) UniformMatrix2fv(dst Uniform, src []float32) {
 			a1: uintptr(len(src) / 4),
 		},
 		parg:     unsafe.Pointer(&src[0]),
+		blocking: true,
+	})
+}
+
+func (ctx *context) UniformMatrix2fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniformMatrix2fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) UniformMatrix2fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniformMatrix2fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
 		blocking: true,
 	})
 }
@@ -1561,6 +1777,30 @@ func (ctx *context) UniformMatrix3fv(dst Uniform, src []float32) {
 	})
 }
 
+func (ctx *context) UniformMatrix3fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniformMatrix3fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) UniformMatrix3fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniformMatrix3fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
+		blocking: true,
+	})
+}
+
 func (ctx *context) UniformMatrix4fv(dst Uniform, src []float32) {
 	ctx.enqueue(call{
 		args: fnargs{
@@ -1569,6 +1809,30 @@ func (ctx *context) UniformMatrix4fv(dst Uniform, src []float32) {
 			a1: uintptr(len(src) / 16),
 		},
 		parg:     unsafe.Pointer(&src[0]),
+		blocking: true,
+	})
+}
+
+func (ctx *context) UniformMatrix4fvP(dst Uniform, count int32, value *float32) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniformMatrix4fvP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     unsafe.Pointer(value),
+		blocking: true,
+	})
+}
+
+func (ctx *context) UniformMatrix4fvUP(dst Uniform, count int32, value unsafe.Pointer) {
+	ctx.enqueue(call{
+		args: fnargs{
+			fn: glfnUniformMatrix4fvUP,
+			a0: dst.c(),
+			a1: uintptr(count),
+		},
+		parg:     value,
 		blocking: true,
 	})
 }
