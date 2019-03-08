@@ -1,5 +1,10 @@
 # Go support for Mobile devices
 
+```
+Custom TGE version:
+    - GLES3 only support
+```
+
 The Go mobile repository holds packages and build tools for using Go on mobile platforms.
 
 Package documentation as a starting point:
